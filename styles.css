@@ -1,3 +1,16 @@
 body {
   background: wheat;
 }
+
+form {
+  visibility: hidden;
+}
+
+#form {
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+}

@@ -19,5 +19,15 @@ function goThroughBooks(myLibrary) {
       }
 }
 
+function showForm() {
+    
+}
+
 let book1 = new Book('papa', 'papa');
 let book2 = new Book('wow', 'wowzers');
+
+const formbtn = document.querySelector('#form-btn');
+ formbtn.addEventListener("click", addFunction) 
+ function addFunction() {
+    document.popup.style.visibility="visible";
+ }
