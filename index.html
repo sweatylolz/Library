@@ -9,13 +9,13 @@
   </head>
 
   <body>
+    <button id="form-btn" onclick="showForm()">Add New Book</button>
 
-    <button id="form-btn">Add New Book</button>
-
-    <div id="form">
+    <div id="form-container">
+        <button id="close" onclick="closeForm()">X</button>
         <form action="" method="get" class="form" name="popup">
             <p>Add New Book</p>
-                <div id="form-container">
+                <div>
                     <div class="form">
                       <label for="book-title">Book Title</label>
                       <input type="text" name="Book Title" id="book-title" required />
@@ -29,8 +29,10 @@
                     </div>
                 </div>
         </form>
+    </div>
 
-	<script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
   </body>
 
 </html>

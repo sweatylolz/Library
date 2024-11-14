@@ -1,4 +1,7 @@
 let myLibrary = [];
+let formcontainer = document.getElementById("form-container");
+let formbutton = document.getElementById("form-btn");
+let closebutton = document.getElementById("close");
 
 function Book(title, author) {
     this.title = title;
@@ -20,14 +23,12 @@ function goThroughBooks(myLibrary) {
 }
 
 function showForm() {
-    
+    formcontainer.style.visibility="visible";
+}
+
+function closeForm() {
+    formcontainer.style.visibility = "hidden";
 }
 
 let book1 = new Book('papa', 'papa');
 let book2 = new Book('wow', 'wowzers');
-
-const formbtn = document.querySelector('#form-btn');
- formbtn.addEventListener("click", addFunction) 
- function addFunction() {
-    document.popup.style.visibility="visible";
- }

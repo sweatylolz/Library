@@ -2,15 +2,15 @@ body {
   background: wheat;
 }
 
-form {
-  visibility: hidden;
-}
-
-#form {
-  background-color: lightcoral;
+#form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 300px;
   height: 200px;
+  visibility: hidden;
+}
+
+#close {
+  border-radius: 10px;
 }
