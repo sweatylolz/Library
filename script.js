@@ -34,13 +34,18 @@ function closeForm() {
 function addTextToPage(book){
     var para = document.createElement("p");
     var node = document.createTextNode(book);
+    var btn = document.createElement("button");
     para.appendChild(node);
     var pContainer = document.getElementById("book1");
     pContainer.appendChild(para);
+    pContainer.appendChild(btn);
+    btn.textContent = "remove";
+    btn.id = "removebtn";
 }
 
 let submit = document.getElementById("book-submit");
-submit.addEventListener('click', addBookClick) 
+submit.addEventListener('click', addBookClick);
+
 function addBookClick() {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("author").value;
