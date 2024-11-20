@@ -2,6 +2,7 @@ let myLibrary = [];
 let formcontainer = document.getElementById("form-container");
 let formbutton = document.getElementById("form-btn");
 let closebutton = document.getElementById("close");
+let counter = 0;
 
 
 function Book(title, author) {
@@ -31,16 +32,30 @@ function closeForm() {
     formcontainer.style.visibility = "hidden";
 }
 
-function addTextToPage(book){
+function addTextToPage(book) {
+    counter++;
+    var bookContainer = document.createElement("div");
     var para = document.createElement("p");
     var node = document.createTextNode(book);
     var btn = document.createElement("button");
     para.appendChild(node);
-    var pContainer = document.getElementById("book1");
-    pContainer.appendChild(para);
-    pContainer.appendChild(btn);
-    btn.textContent = "remove";
+    var pContainer = document.getElementById("books-container");
+    pContainer.appendChild(bookContainer);
+    bookContainer.appendChild(para);
+    bookContainer.appendChild(btn);
+    bookContainer.id = "book" + counter;
+    btn.textContent = "Remove";
     btn.id = "removebtn";
+    btn.addEventListener("click", removeBook);
+    return counter;
+
+}
+
+function removeBook() {
+    var book = document.getElementById("book" + counter);
+    book.remove();
+    counter--;
+
 }
 
 let submit = document.getElementById("book-submit");
