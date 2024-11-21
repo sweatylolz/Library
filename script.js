@@ -55,7 +55,6 @@ function removeBook() {
     var book = document.getElementById("book" + counter);
     book.remove();
     counter--;
-
 }
 
 let submit = document.getElementById("book-submit");
@@ -64,11 +63,12 @@ submit.addEventListener('click', addBookClick);
 function addBookClick() {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("author").value;
-    console.log(title + " by " + author);
     const book = new Book(title, author);
     addBookToLibrary(myLibrary, book);
     addTextToPage(title + " by " + author);
-    console.log(goThroughBooks(myLibrary));
+    goThroughBooks(myLibrary);
+    var bookContiner = document.getElementById("book" + counter);
+    console.log(bookContiner);
 }
 
 
