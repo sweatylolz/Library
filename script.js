@@ -32,8 +32,10 @@ function closeForm() {
     formcontainer.style.visibility = "hidden";
 }
 
+
+
 function addTextToPage(book) {
-    counter++;
+    let bookid = counter++;
     var bookContainer = document.createElement("div");
     var para = document.createElement("p");
     var node = document.createTextNode(book);
@@ -43,19 +45,24 @@ function addTextToPage(book) {
     pContainer.appendChild(bookContainer);
     bookContainer.appendChild(para);
     bookContainer.appendChild(btn);
-    bookContainer.id = "book" + counter;
+    bookContainer.id = bookid;
+    bookContainer.classList = "book";
     btn.textContent = "Remove";
-    btn.id = "removebtn";
+    btn.id = bookid;
+    btn.classList = "btn";
     btn.addEventListener("click", removeBook);
     return counter;
-
 }
 
-function removeBook() {
-    var book = document.getElementById("book" + counter);
-    book.remove();
-    counter--;
-}
+function removeBook(myLibrary) {
+        document.addEventListener('click', function (e) {
+            if (e.target.matches('.btn'))
+              e.target.parentNode.remove()
+          }, false);
+    }
+    
+
+
 
 let submit = document.getElementById("book-submit");
 submit.addEventListener('click', addBookClick);
@@ -64,11 +71,11 @@ function addBookClick() {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("author").value;
     const book = new Book(title, author);
+    let bookid = "book" + counter;
+    book.id = bookid;
     addBookToLibrary(myLibrary, book);
-    addTextToPage(title + " by " + author);
-    goThroughBooks(myLibrary);
-    var bookContiner = document.getElementById("book" + counter);
-    console.log(bookContiner);
+    addTextToPage(book.title + " by " + book.author);
+    // goThroughBooks(myLibrary);
 }
 
 
