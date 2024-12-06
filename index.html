@@ -9,32 +9,32 @@
   </head>
 
   <body>
-    <button id="form-btn" onclick="showForm()">Add New Book</button>
 
-    <div id="form-container">
-        <button id="close" onclick="closeForm()">X</button>
-        <form action="" method="get" class="form" name="popup">
-            <p>Add New Book</p>
-                <div>
-                    <div class="form">
-                      <label for="book-title">Book Title</label>
-                      <input type="text" name="Book Title" id="book-title" required />
-                    </div>
-                    <div class="form">
-                      <label for="author">Author</label>
-                      <input type="text" name="author" id="author" required />
-                    </div>
-                    <div>
-                        <input id="book-submit" type="button" value="Add">
-                    </div>
-                </div>
-        </form>
-    </div>
-
-    <div id="books-container">
-    </div>
-
-    <script type="text/javascript" src="script.js"></script>
+    <div id="body-wrapper">
+      <button id="form-btn" onclick="showForm()">Add New Book</button>
+      <div id="form-container">
+          <button id="close" onclick="closeForm()">X</button>
+          <form action="" method="get" class="form" name="popup">
+              <p>Add New Book</p>
+                  <div>
+                      <div class="form">
+                        <label for="book-title">Book Title</label>
+                        <input type="text" name="Book Title" id="book-title" required />
+                      </div>
+                      <div class="form">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author" required />
+                      </div>
+                      <div>
+                          <input id="book-submit" type="button" value="Add">
+                      </div>
+                  </div>
+          </form>
+      </div>
+      <div id="books-container">
+      </div>
+      <script type="text/javascript" src="script.js"></script>
+    </div> 
 
   </body>
 

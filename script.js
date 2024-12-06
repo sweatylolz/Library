@@ -3,9 +3,10 @@ let formcontainer = document.getElementById("form-container");
 let formbutton = document.getElementById("form-btn");
 let closebutton = document.getElementById("close");
 let counter = 0;
-
+let index = 0;
 
 function Book(title, author) {
+    this.index = index;
     this.title = title;
     this.author = author;
     this.info = function () {
@@ -15,7 +16,9 @@ function Book(title, author) {
 
 function addBookToLibrary(myLibrary, book) {
     myLibrary.push(book);
+    index++;
     return myLibrary;
+
 }
 
 function goThroughBooks(myLibrary) {
@@ -55,11 +58,19 @@ function addTextToPage(book) {
 }
 
 function removeBook(myLibrary) {
+
         document.addEventListener('click', function (e) {
-            if (e.target.matches('.btn'))
-              e.target.parentNode.remove()
+            if (e.target.matches('.btn')) {
+                e.target.parentNode.remove();
+            } 
           }, false);
+    
+          let ppp = myLibrary.findIndex( index => Book.index === index);
+          myLibrary.splice(ppp,1);
+        //   return myLibrary;
     }
+
+
     
 
 
@@ -71,7 +82,7 @@ function addBookClick() {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("author").value;
     const book = new Book(title, author);
-    let bookid = "book" + counter;
+    let bookid = counter;
     book.id = bookid;
     addBookToLibrary(myLibrary, book);
     addTextToPage(book.title + " by " + book.author);
